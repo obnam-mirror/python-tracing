@@ -44,6 +44,7 @@ substring checking only, no globbing or regexps, sorry.
 
 
 import logging
+import os
 import traceback
 
 
@@ -62,6 +63,7 @@ def trace(msg):
     if trace_patterns:
         frames = traceback.extract_stack(limit=2)
         filename, lineno, funcname, text = frames[0]
+        filename = os.path.basename(filename)
         for pattern in trace_patterns:
             if pattern in filename:
                 logging.debug('%s:%s:%s: %s' % 
