@@ -59,10 +59,12 @@ def trace_clear_patterns():
 
 
 def trace(msg):
-    frames = traceback.extract_stack(limit=2)
-    filename, lineno, funcname, text = frames[0]
-    for pattern in trace_patterns:
-        if pattern in filename:
-            logging.debug('%s:%s:%s: %s' % (filename, lineno, funcname, msg))
-            break
+    if trace_patterns:
+        frames = traceback.extract_stack(limit=2)
+        filename, lineno, funcname, text = frames[0]
+        for pattern in trace_patterns:
+            if pattern in filename:
+                logging.debug('%s:%s:%s: %s' % 
+                              (filename, lineno, funcname, msg))
+                break
 

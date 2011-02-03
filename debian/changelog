@@ -1,3 +1,9 @@
+python-tracing (0.1) squeeze; urgency=low
+
+  * Speed optimization. Don't dig out tracebacks if there are no patterns.
+
+ -- Lars Wirzenius <liw@liw.fi>  Thu, 03 Feb 2011 20:01:20 +0000
+
 python-tracing (0.0) squeeze; urgency=low
 
   * Initial packaging. This is not intended to be uploaded to Debian, so

@@ -18,7 +18,7 @@
 from distutils.core import setup, Extension
 
 setup(name='tracing',
-      version='0.0',
+      version='0.1',
       description='debug log/trace messages',
       author='Lars Wirzenius',
       author_email='liw@liw.fi',
