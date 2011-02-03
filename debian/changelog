@@ -1,0 +1,6 @@
+python-tracing (0.0) squeeze; urgency=low
+
+  * Initial packaging. This is not intended to be uploaded to Debian, so
+    no closing of an ITP bug.
+
+ -- Lars Wirzenius <liw@liw.fi>  Thu, 03 Feb 2011 19:28:25 +0000
