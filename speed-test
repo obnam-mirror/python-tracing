@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+python -m timeit \
+    -s 'import logging, tracing' \
+    -s 'logging.basicConfig(filename="/dev/null")' \
+    'tracing.trace("foo: %s" % "bar")'
