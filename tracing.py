@@ -49,6 +49,7 @@ import traceback
 
 
 trace_patterns = []
+trace_cache = set()
 
 
 def trace_add_pattern(pattern):
@@ -57,16 +58,21 @@ def trace_add_pattern(pattern):
     
 def trace_clear_patterns():
     del trace_patterns[:]
+    trace_cache.clear()
 
 
-def trace(msg):
+def trace(msg, *args):
     if trace_patterns:
         frames = traceback.extract_stack(limit=2)
         filename, lineno, funcname, text = frames[0]
-        filename = os.path.basename(filename)
-        for pattern in trace_patterns:
-            if pattern in filename:
-                logging.debug('%s:%s:%s: %s' % 
-                              (filename, lineno, funcname, msg))
-                break
-
+        log_it = filename in trace_cache
+        if not log_it:
+            for pattern in trace_patterns:
+                if pattern in filename:
+                    log_it = True
+                    trace_cache.add(filename)
+                    break
+        if log_it:
+            filename = os.path.basename(filename)
+            msg = msg % args
+            logging.debug('%s:%s:%s: %s' % (filename, lineno, funcname, msg))

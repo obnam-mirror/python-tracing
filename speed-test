@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -e
+
+measure() {
+python -m timeit \
+    -s 'import logging, tracing' \
+    -s 'logging.basicConfig(filename="/dev/null")' \
+    -s "$1" \
+    -s '
+class Foo(object):
+    def foo(self):
+        tracing.trace("%s", "bar")
+f = Foo()
+' \
+    'f.foo()'
+    
+}
+
+echo Without patterns
+measure "pass"
+
+echo With unmatching pattern
+measure 'tracing.trace_add_pattern("yikes")'
+
+echo With matching pattern
+measure 'tracing.trace_add_pattern("timeit-src")'
