@@ -10,7 +10,7 @@ python -m timeit \
     -s '
 class Foo(object):
     def foo(self):
-        tracing.trace("%s" % "bar")
+        tracing.trace("%s", "bar")
 f = Foo()
 ' \
     'f.foo()'
