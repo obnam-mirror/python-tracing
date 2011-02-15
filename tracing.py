@@ -74,5 +74,6 @@ def trace(msg, *args):
                     break
         if log_it:
             filename = os.path.basename(filename)
-            msg = msg % args
+            if args:
+                msg = msg % args
             logging.debug('%s:%s:%s: %s' % (filename, lineno, funcname, msg))

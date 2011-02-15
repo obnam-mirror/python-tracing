@@ -1,3 +1,10 @@
+python-tracing (0.2) squeeze; urgency=low
+
+  * New version with API improvemnt: trace now takes optional arguments
+    and if given any, they'll be used to format message.
+
+ -- Lars Wirzenius <liw@liw.fi>  Tue, 15 Feb 2011 23:46:35 +0000
+
 python-tracing (0.1) squeeze; urgency=low
 
   * Speed optimization. Don't dig out tracebacks if there are no patterns.
