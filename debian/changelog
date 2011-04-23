@@ -1,3 +1,9 @@
+python-tracing (0.3) squeeze; urgency=low
+
+  * New upstream release.
+
+ -- Lars Wirzenius <liw@liw.fi>  Sat, 23 Apr 2011 19:25:51 +0100
+
 python-tracing (0.2) squeeze; urgency=low
 
   * New version with API improvemnt: trace now takes optional arguments
