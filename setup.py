@@ -19,8 +19,26 @@ from distutils.core import setup, Extension
 
 setup(name='tracing',
       version='0.2',
-      description='debug log/trace messages',
       author='Lars Wirzenius',
       author_email='liw@liw.fi',
+      url='http://liw.fi/tracing/',
+      description='debug log/trace messages',
+      long_description='''\
+This package provides a couple of functions for logging debug messages.
+It is sometimes practical to add a lot of debugging log messages to a
+program, but having them enabled all the time results in very large
+log files. Also, logging that much takes quite a bit of time.
+
+This module provides a way to turn such debugging or tracing messages
+on and off, based on the filename they occur in.
+''',
+      classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: GNU General Public License (GPL)',
+        'Programming Language :: Python',
+        'Topic :: Software Development',
+        'Topic :: System :: Logging',
+      ],
       py_modules=['tracing'],
      )
