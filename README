@@ -13,6 +13,13 @@ quite a bit of time.
 This module provides a way to turn such debugging or tracing messages
 on and off, based on the filename they occur in.
 
+A similar effect can be had by adding a `logging.Filter` that enables
+or disables log messages at the `DEBUG` level. The filter gets called
+by the `logging` library at the suitable time. However, this is about
+an order of magnitude slower for the case of running software in
+production mode, with all tracing turned off. That is the reason
+for the `tracing` library to exist.
+
 
 Legalese
 --------
