@@ -24,13 +24,17 @@ setup(name='tracing',
       url='http://liw.fi/tracing/',
       description='debug log/trace messages',
       long_description='''\
-This package provides a couple of functions for logging debug messages.
-It is sometimes practical to add a lot of debugging log messages to a
-program, but having them enabled all the time results in very large
-log files. Also, logging that much takes quite a bit of time.
+This library provides a function for logging debug messages.
+It is sometimes practical during software development to add a lot of 
+debugging log messages to a program, but having them enabled all the time 
+results in very large log files. Also, logging that much takes quite a 
+bit of time.
 
-This module provides a way to turn such debugging or tracing messages
-on and off, based on the filename they occur in.
+This module provides a way to turn such debugging (or tracing) messages
+on and off, based on the filename they occur in. It is much faster than
+using `logging.Filter` to accomplish the same thing, which matters
+when code is run in production mode. The actual logging still happens
+using the `logging` library.
 ''',
       classifiers=[
         'Development Status :: 4 - Beta',
