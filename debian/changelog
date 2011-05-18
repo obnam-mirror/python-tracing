@@ -1,25 +1,5 @@
-python-tracing (0.3) squeeze; urgency=low
+python-tracing (0.4) unstable; urgency=low
 
-  * New upstream release.
+  * Initial packaging. (Closes: #623857)
 
- -- Lars Wirzenius <liw@liw.fi>  Sat, 23 Apr 2011 19:25:51 +0100
-
-python-tracing (0.2) squeeze; urgency=low
-
-  * New version with API improvemnt: trace now takes optional arguments
-    and if given any, they'll be used to format message.
-
- -- Lars Wirzenius <liw@liw.fi>  Tue, 15 Feb 2011 23:46:35 +0000
-
-python-tracing (0.1) squeeze; urgency=low
-
-  * Speed optimization. Don't dig out tracebacks if there are no patterns.
-
- -- Lars Wirzenius <liw@liw.fi>  Thu, 03 Feb 2011 20:01:20 +0000
-
-python-tracing (0.0) squeeze; urgency=low
-
-  * Initial packaging. This is not intended to be uploaded to Debian, so
-    no closing of an ITP bug.
-
- -- Lars Wirzenius <liw@liw.fi>  Thu, 03 Feb 2011 19:28:25 +0000
+ -- Lars Wirzenius <liw@liw.fi>  Wed, 18 May 2011 07:27:23 +0100
