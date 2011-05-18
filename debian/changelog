@@ -1,4 +1,4 @@
-python-tracing (0.4) unstable; urgency=low
+python-tracing (0.4-1) unstable; urgency=low
 
   * Initial packaging. (Closes: #623857)
 
