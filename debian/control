@@ -23,4 +23,4 @@ Description: Python debug tracing helper
  using `logging.Filter` to accomplish the same thing, which matters
  when code is run in production mode. The actual logging still happens
  using the `logging` library.
-
+Homepage: http://liw.fi/tracing/
