@@ -18,7 +18,7 @@
 from distutils.core import setup, Extension
 
 setup(name='tracing',
-      version='0.3',
+      version='0.4',
       author='Lars Wirzenius',
       author_email='liw@liw.fi',
       url='http://liw.fi/tracing/',
