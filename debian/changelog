@@ -1,3 +1,9 @@
+python-tracing (0.4-2) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Lars Wirzenius <liw@liw.fi>  Sat, 28 May 2011 18:04:22 +0100
+
 python-tracing (0.4-1) unstable; urgency=low
 
   * Initial packaging. (Closes: #623857)
