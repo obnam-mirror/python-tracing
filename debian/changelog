@@ -1,6 +1,6 @@
-python-tracing (0.4-2) unstable; urgency=low
+python-tracing (0.5-1) unstable; urgency=low
 
-  * New upstream version.
+  * New upstream version. Adds documentation formatted using sphinx.
 
  -- Lars Wirzenius <liw@liw.fi>  Sat, 28 May 2011 18:04:22 +0100
 
