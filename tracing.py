@@ -50,6 +50,8 @@ regular expression matching.
 
 '''
 
+__version__ = '0.4'
+
 
 import logging
 import os
