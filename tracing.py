@@ -15,16 +15,22 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
-'''Python debubbing log messages.
+''':mod:`tracing` -- fast debug trace messages
+==================================
 
-This module provides a couple of functions for logging debug messages.
+This module provides fast debugging log messages that can be
+turned on and off during runtime.
+
 It is sometimes practical to add a lot of debugging log messages to a
 program, but having them enabled all the time results in very large
-log files. Also, logging that much takes quite a bit of time.
+log files. Also, logging that much takes quite a bit of time. Yet,
+keeping the logging statements can be a good idea so that they can
+be enabled if there is a problem that needs debugging, as long as
+there is a way to disable them in normal production mode.
 
-This module provides a way to turn such debugging or tracing messages
-on and off, based on the filename they occur in. For example:
+This module provides a way to achieve that. For example::
 
+    # in the main program
     import tracing
     
     tracing.trace_add_pattern('foobar')
@@ -32,15 +38,19 @@ on and off, based on the filename they occur in. For example:
     
     ...
     
+    # in some other module
     tracing.trace('start procedure')
-    tracing.trace('arg1=%s' % arg1)
-    tracing.trace('arg2=%s' % arg2)
+    tracing.trace('arg1=%s', arg1)
+    tracing.trace('arg2=%s', arg2)
     
-Only calls that happen in files whose names contain 'foobar' or
-'yeehaa' will actually be logged. Pattern matching is based on
-substring checking only, no globbing or regexps, sorry.
+Only calls that happen in files whose names contain ``foobar`` or
+``yeehaa`` will actually be logged. Pattern matching is based on
+substring checking only, for speed, so there is no globbing or 
+regular expression matching.
 
 '''
+
+__version__ = '0.4'
 
 
 import logging
@@ -53,15 +63,28 @@ trace_cache = set()
 
 
 def trace_add_pattern(pattern):
+    '''Add a module name pattern.'''
     trace_patterns.append(pattern)
     
     
 def trace_clear_patterns():
+    '''Remove all module name patterns.
+    
+    After this, nothing will be traced. This is also the initial state.
+    
+    '''
     del trace_patterns[:]
     trace_cache.clear()
 
 
 def trace(msg, *args):
+    '''Log a trace message if the calling module's name matches a pattern.
+
+    If any arguments are given, the message is formatted as if
+    with ``msg % args``, otherwise the message is written out as is.
+    
+    '''
+
     if trace_patterns:
         frames = traceback.extract_stack(limit=2)
         filename, lineno, funcname, text = frames[0]
