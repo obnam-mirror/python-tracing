@@ -1,12 +1,13 @@
 #!/usr/bin/make -f
-%:
-	dh $@ --with-buildsystem=python_distutils
 
-override_dh_auto_install:
-	python setup.py install --prefix=debian/python-tracing/usr
-	
+%:
+	dh $@ --with=python2 --buildsystem=python_distutils
+
 override_dh_auto_build:
-	if command -v setuppy-debian-versions-match > /dev/null; then \
-		setuppy-debian-versions-match; fi
-	dh_auto_build $@ --with-buildsystem=python_distutils
+	$(MAKE)
+	dh_auto_build --with=python2 --buildsystem=python_distutils
+
+override_dh_auto_clean:
+	$(MAKE) clean
+	dh_auto_clean --with=python2 --buildsystem=python_distutils
 
