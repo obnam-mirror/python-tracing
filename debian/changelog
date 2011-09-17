@@ -1,10 +1,10 @@
-python-tracing (0.5-2) UNRELEASED; urgency=low
+python-tracing (0.6-1) unstable; urgency=low
 
   * Update packaging to use dh_python2.
   * Avoid embedding jquery.js from sphinx, symlink to libjs-jquery
     instead.
 
- -- Lars Wirzenius <liw@liw.fi>  Wed, 31 Aug 2011 17:42:14 +0100
+ -- Lars Wirzenius <liw@liw.fi>  Sat, 17 Sep 2011 20:40:29 +0100
 
 python-tracing (0.5-1) unstable; urgency=low
 

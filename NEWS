@@ -1,6 +1,11 @@
 NEWS for python-tracing
 =======================
 
+Version 0.6, released 2011-09-17
+--------------------------------
+
+* Debian packaging fixes.
+
 Version 0.5, released 2011-05-28
 --------------------------------
 
