@@ -1,3 +1,12 @@
+python-tracing (0.6-2) UNRELEASED; urgency=low
+
+  * Replace embedded underscore.js with symlink to copy from libjs-underscore.
+  * Make the package suggest (rather than depend on) libjs-jquery. Also
+    suggest libjs-underscore. These are needed only for API docs, which
+    most people won't really care about. 
+
+ -- Lars Wirzenius <liw@liw.fi>  Mon, 19 Dec 2011 18:48:03 +0000
+
 python-tracing (0.6-1) unstable; urgency=low
 
   * Update packaging to use dh_python2.
