@@ -1,3 +1,9 @@
+python-tracing (0.7-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Lars Wirzenius <liw@liw.fi>  Sat, 29 Sep 2012 15:04:47 +0100
+
 python-tracing (0.6-2) unstable; urgency=low
 
   * Replace embedded underscore.js with symlink to copy from libjs-underscore.
