@@ -14,14 +14,35 @@ class Foo(object):
 f = Foo()
 ' \
     'f.foo()'
-    
 }
 
-echo Without patterns
+echo tracing: Without patterns
 measure "pass"
 
-echo With unmatching pattern
+echo tracing: With unmatching pattern
 measure 'tracing.trace_add_pattern("yikes")'
 
-echo With matching pattern
+echo tracing: With matching pattern
 measure 'tracing.trace_add_pattern("timeit-src")'
+
+
+measure_logging() {
+python -m timeit \
+    -s 'import logging' \
+    -s 'logging.basicConfig(filename="/dev/null")' \
+    -s "$1" \
+    -s '
+class Foo(object):
+    def foo(self):
+        logging.debug("%s", "bar")
+f = Foo()
+' \
+    'f.foo()'
+}
+
+echo logging: With debug messages
+measure_logging pass
+
+echo logging: Without debug messages
+measure_logging \
+    'logging.basicConfig(filename="/dev/null", level=logging.INFO)'
