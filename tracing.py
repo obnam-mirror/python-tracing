@@ -34,20 +34,20 @@ This module provides a way to achieve that. For example::
 
     # in the main program
     import tracing
-    
+
     tracing.trace_add_pattern('foobar')
     tracing.trace_add_pattern('yeehaa')
-    
+
     ...
-    
+
     # in some other module
     tracing.trace('start procedure')
     tracing.trace('arg1=%s', arg1)
     tracing.trace('arg2=%s', arg2)
-    
+
 Only calls that happen in files whose names contain ``foobar`` or
 ``yeehaa`` will actually be logged. Pattern matching is based on
-substring checking only, for speed, so there is no globbing or 
+substring checking only, for speed, so there is no globbing or
 regular expression matching.
 
 '''
@@ -67,13 +67,13 @@ trace_cache = set()
 def trace_add_pattern(pattern):
     '''Add a module name pattern.'''
     trace_patterns.append(pattern)
-    
-    
+
+
 def trace_clear_patterns():
     '''Remove all module name patterns.
-    
+
     After this, nothing will be traced. This is also the initial state.
-    
+
     '''
     del trace_patterns[:]
     trace_cache.clear()
@@ -84,7 +84,7 @@ def trace(msg, *args):
 
     If any arguments are given, the message is formatted as if
     with ``msg % args``, otherwise the message is written out as is.
-    
+
     '''
 
     if trace_patterns:
