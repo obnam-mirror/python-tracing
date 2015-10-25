@@ -1,11 +1,11 @@
-python-tracing (0.9-1) UNRELEASED; urgency=low
+python-tracing (0.9-1) unstable; urgency=low
 
   * New upstream version.
   * debian/control: Move Homepage: to source stanza.
   * debian/control: Update Standards-Version to 3.9.5. No further
     changes required.
 
- -- Lars Wirzenius <liw@liw.fi>  Sat, 29 Mar 2014 12:43:42 +0000
+ -- Lars Wirzenius <liw@liw.fi>  Sun, 25 Oct 2015 09:54:54 +0200
 
 python-tracing (0.8-1) unstable; urgency=low
 
