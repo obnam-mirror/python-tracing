@@ -48,5 +48,5 @@ using the `logging` library.
         'Topic :: Software Development',
         'Topic :: System :: Logging',
       ],
-      py_modules=['tracing'],
+      packages=['tracing'],
      )
