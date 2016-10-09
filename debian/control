@@ -3,13 +3,13 @@ Maintainer: Lars Wirzenius <liw@liw.fi>
 Homepage: http://liw.fi/tracing/
 Section: python
 Priority: optional
-Standards-Version: 3.9.5
-Build-Depends: debhelper (>= 7.3.8), python-all (>= 2.6.6-3~), python-sphinx
-X-Python-Version: >= 2.6
+Standards-Version: 3.9.8
+Build-Depends: debhelper (>= 9), python-all (>= 2.7~), python-sphinx
+X-Python-Version: >= 2.7
 
 Package: python-tracing
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.6)
+Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.7)
 Suggests: libjs-jquery, libjs-underscore
 Description: Python debug tracing helper
  Provides the Python library 'tracing' to help with logging debug messages.

@@ -1,6 +1,11 @@
 NEWS for python-tracing
 =======================
 
+Version 0.9+git, not yet released
+--------------------------------
+
+* Require Python 2.7.
+
 Version 0.9, released 2015-10-25
 --------------------------------
 
